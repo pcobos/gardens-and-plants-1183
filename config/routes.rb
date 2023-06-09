@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  resources :gardens
+  get 'plants/create'
+  resources :gardens do
+    resources :plants, only: :create
+  end
 end
